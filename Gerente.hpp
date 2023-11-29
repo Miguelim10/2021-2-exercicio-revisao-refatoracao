@@ -2,36 +2,25 @@
 #define GERENTE_HPP
 
 #include <iostream>
-#include <iomanip>
+#include <string>
 
-using namespace std;
-
-double ValorBONIFICACAO = 15.0;
-
+/*
+    Retirada do namespace e da variável global
+*/
 class Gerente {
-    public:
-        double SalarioBase; // valor m�nimo recebido pelo funcion�rio
-        string IDADE;
-        string nome;
-        int rgFunc;
-        double bonificacao;
+private:
+    static double ValorBONIFICACAO;  // Variável de bonificação específica para Gerente
 
+public:
+    double SalarioBase; // valor mínimo recebido pelo funcionário
+    std::string IDADE;
+    std::string nome;
+    int rgFunc;
+    double bonificacao;
 
-        void print() {
-            cout << "[Funcionario]" << endl
-            << "[Gerente]" << endl
-            << "  Nome: " << nome << endl
-            << "  Idade: " << IDADE << endl
-            << "  RGFunc: " << rgFunc << endl
-            << "  SalarioBase: R$ " << fixed << setprecision(2) << SalarioBase <<endl;
-        }
+    void print();
 
-        double calcula_BONIFICACAO_GERENTE(int numTOTALVendas){
-            double x;
-            return numTOTALVendas*ValorBONIFICACAO;
-        }
-
+    double calcula_BONIFICACAO_GERENTE(int numTOTALVendas);
 };
 
 #endif
-
