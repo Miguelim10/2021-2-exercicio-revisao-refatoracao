@@ -4,6 +4,7 @@
 #include "Funcionario.hpp"
 /*
     Retirada do namespace std e adição do prefixo std onde necessário
+    Retirada das variáveis globais
 */
 
 class Especialista : public Funcionario {
